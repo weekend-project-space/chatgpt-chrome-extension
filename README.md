@@ -49,3 +49,11 @@ chrome 打开新选项卡
 拖放
 
 [chatgpt-chrome-extension.crx](./chatgpt-chrome-extension.crx)
+
+---
+
+**demo**
+
+![demo1](./doc/demo1.png)
+
+![hello word](./doc/hello-world.png)

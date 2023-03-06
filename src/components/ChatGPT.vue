@@ -265,6 +265,7 @@ const scrollToBottom = debounce(() => {
           v-model="input"
           placeholder="Please enter your chat message and press enter to send."
           @keypress.enter="send()"
+          autofocus="autofocus"
         />
         <button class="btn" :disabled="loading" @click="send()">
           <svg

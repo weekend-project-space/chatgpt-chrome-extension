@@ -527,7 +527,8 @@ const scrollToBottom = debounce(() => {
   margin: 0 auto;
   text-align: center;
   button {
-    color: red;
+    color: rgba(255, 100, 100, 1);
+    background: var(--msg-bg-color);
   }
 }
 </style>

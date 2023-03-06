@@ -1,7 +1,3 @@
-<!--
-A simple markdown editor.
--->
-
 <script setup>
 import micromark from "../utils/micromark";
 import { debounce } from "lodash-es";
@@ -152,7 +148,7 @@ const sending = async (prompt) => {
       if (i % 20 == 0 || i == r.length - 1) {
         scrollToBottom();
       }
-    }, i * 50);
+    }, i * 20);
   }
 };
 
@@ -293,20 +289,19 @@ const scrollToBottom = debounce(() => {
 <style lang="less" scoped>
 .chat-warp {
   height: 100vh;
-  max-width: 1024px;
+  // max-width: 1024px;
   margin: 0 auto;
   background: transparent;
   color: var(--text-color);
 
   display: grid;
-  grid-template-rows: 40px 1fr 65px;
+  grid-template-rows: 40px 1fr 75px;
   font-size: 14px;
   .chat-panel {
     overflow: auto;
   }
   .chat-header,
-  .chat-panel,
-  .chat-footer {
+  .chat-panel {
     padding: var(--padding);
     box-sizing: border-box;
   }
@@ -321,8 +316,9 @@ const scrollToBottom = debounce(() => {
   }
   .chat-footer {
     background: var(--bg-color);
-    border-bottom-right-radius: var(--gap-padding);
-    border-bottom-left-radius: var(--gap-padding);
+    padding: 3px var(--padding);
+    // border-bottom-right-radius: var(--gap-padding);
+    // border-bottom-left-radius: var(--gap-padding);
   }
 }
 .logo-warp {
@@ -373,7 +369,7 @@ const scrollToBottom = debounce(() => {
   }
 }
 .chat-panel {
-  border-bottom: 1px solid var(--msg-bg-color);
+  // border-bottom: 1px solid var(--msg-bg-color);
   .chat-line {
     // background: rgba(0, 0, 0, 0.1);
     // border: 1px solid #ccc;
@@ -473,17 +469,28 @@ const scrollToBottom = debounce(() => {
   }
 }
 .chat-send-box {
+  padding: 10px;
   display: grid;
   grid-template-columns: 1fr 30px;
   grid-gap: var(--gap-padding);
+  border-radius: var(--gap-padding);
+  box-shadow: 3px 3px 10px var(--msg-bg-color),
+    -3px -3px 10px var(--msg-bg-color);
+  // border: 1px solid #eee;
   .textarea {
+    color: var(--text-color);
     border: 0;
     padding: 0.5em;
     border-radius: 10px;
-    border: 1px solid #ccc;
-    background: rgba(255, 255, 255, 0.6);
+    // border: 1px solid #ccc;
+    background: var(--bg-color);
+
+    // background: rgba(255, 255, 255, 0.6);
     &:focus {
-      outline-color: rgba(200, 200, 200, 0.6);
+      outline: var(--bg-color);
+    }
+    &:hover {
+      outline: var(--bg-color);
     }
   }
   .btn {

@@ -1,0 +1,24 @@
+{
+  "name": "chatgpt-chrome-extension",
+  "description": "chatgpt-chrome-extension Assistant",
+  "version": "1.0",
+  "manifest_version": 3,
+  "icons": {
+    "16": "16.png",
+    "48": "48.png",
+    "128": "128.png"
+  },
+  "action": {
+    "default_popup": "index.html"
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+X",
+        "mac": "MacCtrl+Shift+X"
+      },
+      "description": "Opens popup.html"
+    }
+  },
+  "permissions": ["storage", "clipboardWrite", "clipboardRead"]
+}
